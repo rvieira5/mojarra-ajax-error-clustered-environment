@@ -1,0 +1,22 @@
+version: '3'
+services:
+  javaserver1:
+    build:
+      context: ./javaproject
+  javaserver2:
+    build:
+      context: ./javaproject
+  javaserver3:
+    build:
+      context: ./javaproject
+  loadbalancer:
+    build:
+      context: ./loadbalancer
+    depends_on:
+      - javaserver1
+      - javaserver2
+      - javaserver3
+    ports:
+     - "80:80"
+  sessionmanager:
+    image: "memcached"

@@ -1,0 +1,11 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:panelGroup id="page3Container">
+		<h:commandLink value="Click here about 2 times">
+			<f:ajax render="page3Container" onerror="displayError" />
+		</h:commandLink>
+	</h:panelGroup>
+
+</ui:composition>
