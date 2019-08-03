@@ -1,0 +1,22 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+	<h:form id="page2-form">
+		<h:panelGroup rendered="#{pageMB.internalSubpage ne null}">
+			<ui:include src="#{pageMB.internalSubpage}" />
+		</h:panelGroup>
+		<h:panelGroup rendered="#{pageMB.internalSubpage eq null}"
+			id="page2-content">
+			<h:commandLink value="Switch internal pages" id="page3-btn">
+				<f:ajax render="internal-page-content"
+					listener="#{pageMB.switchInternalSubpageTo('/page3.xhtml')}"
+					onerror="displayError" />
+			</h:commandLink>
+		</h:panelGroup>
+
+	</h:form>
+
+
+</ui:composition>

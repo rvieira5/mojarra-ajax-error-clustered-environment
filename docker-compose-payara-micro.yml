@@ -2,13 +2,13 @@ version: '3'
 services:
   javaserver1:
     build:
-      context: ./javaproject
+      context: ./payaramicro_javaproject
   javaserver2:
     build:
-      context: ./javaproject
+      context: ./payaramicro_javaproject
   javaserver3:
     build:
-      context: ./javaproject
+      context: ./payaramicro_javaproject
   loadbalancer:
     build:
       context: ./loadbalancer
@@ -18,5 +18,3 @@ services:
       - javaserver3
     ports:
      - "80:80"
-  sessionmanager:
-    image: "memcached"

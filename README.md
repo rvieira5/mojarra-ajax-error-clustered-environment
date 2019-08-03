@@ -14,10 +14,16 @@ Requirements
 Instructions
 ============
 
-To run the application, use the following command:
+To run the application using Tomcat, use the following command:
 
 ```bash
-$ docker-compose up -d --build
+$ docker-compose -f docker-compose-tomcat.yml up -d --build
+```
+
+To run the application using Payara Micro, use the following command:
+
+```bash
+$ docker-compose -f docker-compose-payara-micro.yml up -d --build
 ```
 
 Then, after the application finishes the startup, access the following URL:
